@@ -23,7 +23,7 @@ public class TripBooking {
 
     @ManyToOne
     @JoinColumn
-    Driver driver1;
+    Driver driver;
 
     @ManyToOne
     @JoinColumn
@@ -39,7 +39,7 @@ public class TripBooking {
         this.distanceInKm = distanceInKm;
         this.tripStatus = tripStatus;
         this.bill = bill;
-        this.driver1 = driver1;
+        this.driver = driver1;
         this.customer = customer;
     }
 
@@ -84,11 +84,11 @@ public class TripBooking {
         this.distanceInKm = distanceInKm;
     }
 
-    public TripStatus getTripStatus() {
+    public TripStatus getStatus() {
         return tripStatus;
     }
 
-    public void setTripStatus(TripStatus tripStatus) {
+    public void setStatus(TripStatus tripStatus) {
         this.tripStatus = tripStatus;
     }
 
@@ -100,12 +100,12 @@ public class TripBooking {
         this.bill = bill;
     }
 
-    public Driver getDriver1() {
-        return driver1;
+    public Driver getDriver() {
+        return driver;
     }
 
-    public void setDriver1(Driver driver1) {
-        this.driver1 = driver1;
+    public void setDriver(Driver driver1) {
+        this.driver = driver1;
     }
 
     public Customer getCustomer() {
