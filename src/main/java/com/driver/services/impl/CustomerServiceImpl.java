@@ -72,7 +72,7 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		if (toBeBooked == null) {
-			throw new Exception("No cab available!");
+			throw new Exception("Customer Not Valid");
 		}
 
 		TripBooking tripBooking = new TripBooking();
