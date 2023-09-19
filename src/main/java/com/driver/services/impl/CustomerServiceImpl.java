@@ -56,23 +56,23 @@ public class CustomerServiceImpl implements CustomerService {
 		driverList = driverRepository2.findAll();
 
 		Driver toBeBooked = null;
-//		int lowestDriverId = Integer.MAX_VALUE;
-//
-//		for (Driver driver: driverList) {
-//			if (driver.getCab().getAvailable()) {
-//				if (toBeBooked == null || lowestDriverId > driver.getDriverId()) {
-//					toBeBooked = driver;
-//					lowestDriverId = Math.min(lowestDriverId,driver.getDriverId());
-//				}
-//			}
-//		}
+		int lowestDriverId = Integer.MAX_VALUE;
 
-		for(Driver driver : driverList){
-			if(driver.getCab().getAvailable()){
-				toBeBooked = driver;
-				break;
+		for (Driver driver: driverList) {
+			if (driver.getCab().getAvailable()) {
+				if (toBeBooked == null || lowestDriverId > driver.getDriverId()) {
+					toBeBooked = driver;
+					lowestDriverId = Math.min(lowestDriverId,driver.getDriverId());
+				}
 			}
 		}
+
+//		for(Driver driver : driverList){
+//			if(driver.getCab().getAvailable()){
+//				toBeBooked = driver;
+//				break;
+//			}
+//		}
 
 		if (toBeBooked == null) {
 			throw new Exception("No cab available!");
