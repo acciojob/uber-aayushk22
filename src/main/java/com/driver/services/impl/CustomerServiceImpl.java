@@ -59,7 +59,7 @@ public class CustomerServiceImpl implements CustomerService {
 		int lowestDriverId = Integer.MAX_VALUE;
 
 		for (Driver driver: driverList) {
-			if (driver.getCab().getAvailable()) {
+			if (driver.getCab() != null && driver.getCab().getAvailable()) {
 				if (toBeBooked == null || lowestDriverId > driver.getDriverId()) {
 					toBeBooked = driver;
 					lowestDriverId = Math.min(lowestDriverId,driver.getDriverId());
